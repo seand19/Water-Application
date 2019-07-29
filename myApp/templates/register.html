@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="static/login.css">
+{% endblock %}
+{% block body %}
+<div class="container reg-heading heading">
+    <h1>Register</h1>
+    <h5 id="errMsg" style="color: red;">{{ message }}</h5>
+</div>
+<div class="container ">
+    <div class="row">
+        <!-- Login Form -->
+        <form class="col-6" method="POST">
+            <div>
+                <p class="text-primary">Password must be 8 characters long,</p>
+                <p class="text-primary">Contain atleast 1 uppcase and lowercase letter, </p>
+                <p class="text-primary">Contain atleast 1 number </p>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" id="testerId" 
+                    name="testerId" placeholder="Enter Tester Serial number" required autofocus>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" id="userName" 
+                    name="username" placeholder="Enter User Name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="password" id="password" 
+                    name="pswd" placeholder="Enter Password" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="password" id="confirm" 
+                    name="confirm" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+        </form>
+        <script type="text/javascript">
+            function display(msg) {
+                if (msg == "none")
+                    document.getElementById("errMsg").style.visibility = "hidden";
+            }
+            display('{{ message}}');
+        </script>
+    </div>
+</div>
+{% endblock %}

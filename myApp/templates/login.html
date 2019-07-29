@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="static/login.css">
+{% endblock %}
+{% block body %}
+<div class="container heading">
+    <h1>Please sign in</h1>
+    <h5 id="errMsg" style="color: red;">{{ message }}</h5>
+</div>
+<div class="container main">
+    <div class="row">
+        <!-- Login Form -->
+        <form class="col-6 form-signin" method="POST">
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" id="userName" 
+                    name="username" placeholder="Enter User Name" required autofocus>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="password" id="password" 
+                    name="pswd" placeholder="Enter Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            <div class="form-group" id="register-needed">
+                <a href="/register">Don't Have An Account?</a>
+            </div>
+        </form>
+        <script type="text/javascript">
+            function display(msg) {
+                if (msg == "none")
+                    document.getElementById("errMsg").style.visibility = "hidden";
+            }
+            display('{{ message}}');
+        </script>
+    </div>
+</div>
+{% endblock %}

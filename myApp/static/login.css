@@ -1,0 +1,20 @@
+body{
+    font-size: 20px;
+}
+.main{
+    margin-top: 2%;
+}
+form{
+    margin:auto;
+}
+.heading{
+    text-align: center;
+    margin-top: 5%;
+}
+.reg-heading{
+    margin-top: 2%;
+}
+#register-needed{
+    text-align: center;
+    margin-top: 5%;
+}

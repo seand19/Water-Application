@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="static/login.css">
+{% endblock %}
+{% block body %}
+<div class="container heading">
+    <h1>Please Enter New Tester Number</h1>
+    <h5 id="errMsg" style="color: red;">{{ message }}</h5>
+</div>
+<div class="container main">
+    <div class="row">
+        <!-- Login Form -->
+        <form class="col-6 form-signin" method="POST">
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" id="testerId" 
+                    name="testerId" placeholder="Enter Tester Serial number" required autofocus>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" id="confirm" 
+                    name="confirmId" placeholder="Confirm Tester Serial number" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </form>
+        <script type="text/javascript">
+            function display(msg) {
+                if (msg == "none")
+                    document.getElementById("errMsg").style.visibility = "hidden";
+            }
+            display('{{ message}}');
+        </script>
+    </div>
+</div>
+{% endblock %}
